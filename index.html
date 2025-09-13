@@ -644,7 +644,13 @@
                 const userMessage = chatInput.value.trim();
                 addMessage('user', userMessage);
                 chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
-                getAIResponse(userMessage, chatHistory);
+                
+                // --- RELIABILITY FIX ---
+                // To ensure stability and prevent memory issues, we only send the most recent
+                // part of the conversation to the AI, keeping the chatbot fast and reliable.
+                const recentHistory = chatHistory.slice(-10); // Use last 10 messages for context
+
+                getAIResponse(userMessage, recentHistory);
                 chatInput.value = '';
             }
         }
