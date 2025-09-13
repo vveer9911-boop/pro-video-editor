@@ -3,99 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vision forge - professional video editor</title>
+    <title>Mohammed Abdullah - Vision Forge</title>
 
     <!-- SEO & Social Sharing Meta Tags -->
-    <meta name="description" content="Portfolio of Mohammed Abdullah, a professional Video Editor.">
-    <meta property="og:title" content="Mohammed Abdullah - Pro Video Editor">
+    <meta name="description" content="Portfolio of Mohammed Abdullah, a professional Video Editor, Digital Marketer, and Social Media Manager specializing in cinematic storytelling.">
+    <meta property="og:title" content="Mohammed Abdullah - Vision Forge | Pro Video Editor">
     <meta property="og:description" content="Explore the creative video projects and marketing skills of Mohammed Abdullah.">
     <meta property="og:image" content="https://i.postimg.cc/SN6fyzSd/download-2.jpg">
     <meta property="og:url" content="https://example.com"> <!-- Replace with your actual domain -->
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Favicon (VF Logo SVG) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='black' stroke='rgba(255,255,255,0.4)' stroke-width='4'/%3E%3Ctext x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='Playfair Display, serif' font-size='55' font-weight='900' fill='white'%3EVF%3C/text%3E%3C/svg%3E">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #9ca3af;
+            --background-color: #0a0a0a;
+            --surface-color: #111111;
+            --border-color: #222222;
+        }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #000000;
+            background-color: var(--background-color);
+            color: var(--secondary-color);
         }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1f2937; }
-        ::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #d1d5db; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #333; }
 
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-text { font-family: 'Playfair Display', serif; letter-spacing: 0.08em; }
+        .subtitle-transparent { color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); }
+        
+        .section-title { font-family: 'Playfair Display', serif; }
+
+        .service-card {
+            background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 2.5rem; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.2); }
+        .service-card .service-icon { margin: 0 auto 1.5rem; }
+        
+        /* Reverted Project Card styles */
+        .project-card {
+            background-color: #1a202c; /* A dark blue-gray */
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid #2d3748;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
         .video-container {
-            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #1f2937;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
         }
         .video-container iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
-        }
-        .nav-link { position: relative; transition: color 0.3s ease; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -6px; left: 50%; transform: translateX(-50%); background-color: #d1d5db; transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 100%; }
-
-        #home h1.hero-text { font-family: 'Playfair Display', serif; letter-spacing: 0.08em; }
-        #home .subtitle-transparent { color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8); text-shadow: none; }
-        
-        .section-title { position: relative; display: inline-block; padding-bottom: 0.5rem; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background-color: #9ca3af; border-radius: 2px; }
-        
-        .project-card { background-color: #111827; border: 1px solid #1f2937; border-radius: 0.75rem; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1); }
-        .project-card .video-container { border-radius: 0.75rem 0.75rem 0 0; }
-
-        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        .pro-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 2rem;
-            font-size: 1.125rem;
-            font-weight: bold;
-            color: #fff;
-            background-color: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            border-radius: 0.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            z-index: 1;
-        }
-        .pro-button::before {
-            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 0;
-            height: 100%;
-            background-color: #fff;
-            transition: width 0.4s ease;
-            z-index: -1;
-        }
-        .pro-button:hover {
-            color: #000000;
-        }
-        .pro-button:hover::before {
             width: 100%;
+            height: 100%;
+            border: 0;
         }
-        .pro-button svg {
-            transition: transform 0.4s ease;
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        
+        .pro-button {
+            display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.75rem 2rem; font-size: 1rem; font-weight: bold; color: var(--background-color); background-color: var(--primary-color); border-radius: 0.5rem; transition: all 0.3s ease;
         }
-        .pro-button:hover svg {
-            transform: translateX(5px);
+        .pro-button:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
+        
+        /* Updated Form Styles */
+        .form-input {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            color: var(--primary-color);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
+        .form-input:focus {
+            outline: none;
+            border-color: #4a5568;
+            box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.5);
+        }
+        
+        .success-animation { display: none; text-align: center; }
+        .success-animation.visible { display: block; }
+        .checkmark { width: 100px; height: 100px; border-radius: 50%; display: block; stroke-width: 4; stroke: #4BB543; margin: 0 auto 20px; box-shadow: inset 0px 0px 0px #4BB543; animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both; }
+        .checkmark__circle { stroke-dasharray: 166; stroke-dashoffset: 166; animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards; }
+        .checkmark__check { transform-origin: 50% 50%; stroke-dasharray: 48; stroke-dashoffset: 48; animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards; }
+        @keyframes stroke { 100% { stroke-dashoffset: 0; } }
+        @keyframes scale { 0%, 100% { transform: none; } 50% { transform: scale3d(1.1, 1.1, 1); } }
+        @keyframes fill { 100% { box-shadow: inset 0px 0px 0px 50px #4BB543; } }
+
+        /* Chatbot Styles */
+        #chatbot-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+        #chatbot-toggle {
+            background-color: white;
+            color: black;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #chatbot-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        #chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 370px;
+            height: 500px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform: scale(0.95);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #chatbot-window.open {
+            transform: scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #chat-header {
+            padding: 1rem;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid var(--border-color);
+        }
+        #chat-messages {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .chat-message {
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            max-width: 80%;
+        }
+        .user-message {
+            background-color: white;
+            color: black;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+        .bot-message {
+            background-color: #222;
+            color: white;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background-color: #666;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.16s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.32s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+        #chat-input-container {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+        #chat-input {
+            width: 100%;
+            background-color: #222;
+            border: 1px solid #444;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            color: white;
+            outline: none;
+        }
+        #chat-input:focus { border-color: white; }
     </style>
 </head>
 <body class="text-gray-200">
 
-    <header id="main-header" class="backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="#home" class="flex items-center gap-3 text-xl font-bold text-white uppercase tracking-wider">
@@ -106,63 +238,88 @@
                     <span>VISION FORGE</span>
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-lg font-medium">Home</a>
-                    <a href="#projects" class="nav-link text-lg font-medium">Projects</a>
-                    <a href="#about" class="nav-link text-lg font-medium">About</a>
-                    <a href="#contact" class="nav-link text-lg font-medium">Contact</a>
+                    <a href="#services" class="text-gray-300 hover:text-white transition-colors">Services</a>
+                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Work</a>
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="#contact" class="pro-button !py-2 !px-6 !text-sm">Contact</a>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-black/50">
-            <a href="#home" class="block py-2 text-center text-lg font-medium hover:text-white">Home</a>
-            <a href="#projects" class="block py-2 text-center text-lg font-medium hover:text-white">Projects</a>
-            <a href="#about" class="block py-2 text-center text-lg font-medium hover:text-white">About</a>
-            <a href="#contact" class="block py-2 text-center text-lg font-medium hover:text-white">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-black/80 backdrop-blur-sm">
+            <a href="#services" class="block py-2 text-center text-lg font-medium text-gray-300 hover:text-white">Services</a>
+            <a href="#projects" class="block py-2 text-center text-lg font-medium text-gray-300 hover:text-white">Work</a>
+            <a href="#about" class="block py-2 text-center text-lg font-medium text-gray-300 hover:text-white">About</a>
+            <a href="#contact" class="block py-2 text-center text-lg font-medium text-gray-300 hover:text-white">Contact</a>
         </div>
     </header>
 
     <main>
-        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://i.postimg.cc/SN6fyzSd/download-2.jpg');"></div>
-            <div class="absolute inset-0 bg-black/70 z-10"></div>
-            <div class="text-center z-20 p-4">
+        <section id="home" class="hero-section h-screen flex items-center justify-center relative overflow-hidden" style="background-image: url('https://i.postimg.cc/SN6fyzSd/download-2.jpg');">
+            <div class="absolute inset-0 bg-black/60 z-10"></div>
+            <div class="text-center z-20 p-4 reveal visible">
                 <h1 class="hero-text text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase">Mohammed Abdullah</h1>
-                <p class="subtitle-transparent text-xl md:text-2xl lg:text-3xl mt-4 tracking-wide">Video Editor / Digital Marketer / Social Media Manager</p>
+                <p class="subtitle-transparent text-xl md:text-2xl lg:text-3xl mt-4 tracking-wide">Cinematic Video Editor & Digital Marketer</p>
                 <a href="#projects" class="pro-button mt-12">
-                    <span>View My Work</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    <span>Explore My Work</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
                 </a>
             </div>
         </section>
 
-        <section id="who-am-i" class="py-20 md:py-24 bg-black">
-            <div class="container mx-auto px-6 text-center reveal">
-                <h2 class="section-title text-4xl font-bold mb-8 text-white">Who Am I?</h2>
-                <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">I am a creative professional who blends the art of video editing with the science of digital marketing. As a Hubspot Certified marketer, I don't just create videos that look amazing—I create videos that are designed to capture attention, tell a compelling story, and drive results for your brand. My goal is to turn your vision into content that connects and converts.</p>
-            </div>
-        </section>
-
-        <section id="projects" class="py-20 md:py-32 bg-black/50">
-            <div class="container mx-auto px-6 reveal">
-                <h2 class="section-title text-4xl font-bold text-center mb-16 text-white">My Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-                    <div class="project-card">
-                        <div class="video-container"><iframe src="https://drive.google.com/file/d/1k8lNh4_aZ6S8M9ihi7LMqm54cBoAyxI6/preview" allow="autoplay"></iframe></div>
-                        <div class="p-6"><h3 class="text-2xl font-bold mb-2 text-white">Nezha Edit - "Until I Die"</h3><p class="text-gray-400">A dynamic and action-packed edit showcasing intense moments and powerful visual storytelling, synchronized to the rhythm of the music.</p></div>
+        <section id="services" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <div class="reveal">
+                    <h2 class="section-title text-4xl font-bold mb-4 text-white">My Services</h2>
+                    <p class="text-lg max-w-2xl mx-auto mb-16">I craft compelling narratives that captivate audiences and drive results.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="service-card reveal">
+                        <div class="service-icon"><svg class="w-16 h-16 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9A2.25 2.25 0 0 0 4.5 18.75Z" /></svg></div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Video Editing</h3>
+                        <p>From cinematic movie edits to dynamic social media content, I transform raw footage into polished, engaging stories.</p>
                     </div>
-                    <div class="project-card">
-                        <div class="video-container"><iframe src="https://drive.google.com/file/d/1WoiVtS9RqANqksJ-uvxlJcL4-cCFsvk0/preview" allow="autoplay"></iframe></div>
-                        <div class="p-6"><h3 class="text-2xl font-bold mb-2 text-white">Nezha Edit - "Nezha Is Here"</h3><p class="text-gray-400">This project focuses on character introduction and building hype, using quick cuts and impactful scenes to create a compelling narrative.</p></div>
+                    <div class="service-card reveal" style="transition-delay: 200ms;">
+                        <div class="service-icon"><svg class="w-16 h-16 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" /></svg></div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Digital Marketing</h3>
+                        <p>As a HubSpot Certified marketer, I develop data-driven strategies that increase reach, engagement, and conversions.</p>
+                    </div>
+                    <div class="service-card reveal" style="transition-delay: 400ms;">
+                        <div class="service-icon"><svg class="w-16 h-16 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21 .865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.17 48.17 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg></div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Social Media</h3>
+                        <p>I manage and grow social media channels by creating compelling content and fostering authentic community engagement.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-20 md:py-32 bg-black">
+        <section id="projects" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <div class="reveal">
+                    <h2 class="section-title text-4xl font-bold mb-4 text-white">Selected Work</h2>
+                    <p class="text-lg max-w-2xl mx-auto mb-16">A collection of projects that showcase my passion for storytelling.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+                    <div class="project-card reveal">
+                        <div class="video-container"><iframe src="https://drive.google.com/file/d/19fBToyqJVvzQSldIS4GdPsaW3nSEdHor/preview" allow="autoplay"></iframe></div>
+                        <div class="p-6"><h3 class="text-2xl font-bold mb-2 text-white">"Leave The Kid Alone": Avengers Doomsday</h3><p class="text-gray-400">This trailer transforms existing footage with dynamic AE captions and effects. The cinematic look is achieved through professional color correction in DaVinci Resolve to build tension.</p></div>
+                    </div>
+                    <div class="project-card reveal" style="transition-delay: 200ms;">
+                        <div class="video-container"><iframe src="https://drive.google.com/file/d/1k8lNh4_aZ6S8M9ihi7LMqm54cBoAyxI6/preview" allow="autoplay"></iframe></div>
+                        <div class="p-6"><h3 class="text-2xl font-bold mb-2 text-white">Cinematic Movie Edit: "Until I Die"</h3><p class="text-gray-400">This edit's gripping, emotional look is enhanced by advanced color correction in DaVinci Resolve, while custom AE captions and impactful effects intensify the action sequences.</p></div>
+                    </div>
+                    <div class="project-card reveal" style="transition-delay: 400ms;">
+                        <div class="video-container"><iframe src="https://drive.google.com/file/d/1WoiVtS9RqANqksJ-uvxlJcL4-cCFsvk0/preview" allow="autoplay"></iframe></div>
+                        <div class="p-6"><h3 class="text-2xl font-bold mb-2 text-white">Character Spotlight: "Nezha"</h3><p class="text-gray-400">A powerful on-screen persona is amplified with subtle AE captions, custom effects, and a polished final color grade achieved with DaVinci Resolve for a truly professional finish.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-32">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 reveal">
                 <div class="w-full md:w-1/3">
-                    <div class="w-48 h-48 md:w-64 md:h-64 mx-auto bg-black rounded-full flex items-center justify-center shadow-2xl border-4 border-gray-500 transform hover:scale-105 hover:shadow-gray-500/30 transition-all duration-300">
+                    <div class="w-48 h-48 md:w-64 md:h-64 mx-auto bg-black rounded-full flex items-center justify-center shadow-2xl border-4 border-gray-800 transform hover:scale-105 transition-transform duration-300">
                         <svg viewBox="0 0 100 100" class="w-1/2 h-1/2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="'Playfair Display', serif" font-size="80" font-weight="900" fill="white">VF</text>
                         </svg>
@@ -170,67 +327,139 @@
                 </div>
                 <div class="w-full md:w-2/3 text-center md:text-left">
                     <h2 class="section-title text-4xl font-bold mb-8 text-white">About Me</h2>
-                    <p class="text-lg text-gray-300 mb-4 leading-relaxed">My name is Mohammed Abdullah, and I'm a 13-year-old video editor with a deep passion for visual storytelling. Over the past two years, I've dedicated myself to honing my craft. My skills go beyond editing; I am also a HubSpot Certified digital marketer, which allows me to create content that not only looks great but also achieves strategic goals.</p>
-                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">I believe in building trust first, which is why your first few trial edits are completely free if you're not satisfied. For project quotes and detailed pricing, please reach out via email.</p>
-                    <a href="#contact" class="pro-button mt-4">
-                        <span>Let's Discuss Your Project</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7z"></path></svg>
-                    </a>
-                    
-                    <div class="mt-8 pt-6 border-t border-gray-700/50">
-                        <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center justify-center md:justify-start">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
-                                <span class="text-lg text-gray-300">Mohammed Abdullah</span>
+                    <p class="text-lg mb-4 leading-relaxed">My name is Mohammed Abdullah, and I'm a 13-year-old video editor with a deep passion for visual storytelling. Over the past two years, I've dedicated myself to honing my craft. My skills go beyond editing; I am also a HubSpot Certified digital marketer, which allows me to create content that not only looks great but also achieves strategic goals.</p>
+                    <p class="text-lg mb-6 leading-relaxed">I believe in building trust first, which is why your first few trial edits are completely free if you're not satisfied. For project quotes and detailed pricing, please reach out via email.</p>
+                    <a href="#contact" class="pro-button mt-4"><span>Let's Discuss Your Project</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 reveal">
+                <div class="text-center">
+                    <h2 class="section-title text-4xl font-bold mb-4 text-white">Let's Create Together</h2>
+                    <p class="text-lg max-w-2xl mx-auto mb-16">Have a project in mind? I'd love to hear about it. Fill out the form below or email me directly.</p>
+                </div>
+                
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                    <!-- Left Column: Info -->
+                    <div class="flex flex-col gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Contact Information</h3>
+                            <div class="flex items-center gap-4 mb-4">
+                                <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.946 9.315c.522-.174 1.103-.349 1.767-.522 1.283-.417 2.68-.825 4.133-1.141a2.49 2.49 0 0 1 .533-.075 2.497 2.497 0 0 1 1.073.242c.248.113.496.228.744.343.493.228.986.457 1.479.684.74.339 1.48.677 2.22.997.74.32 1.48.64 2.22.96.493.218.986.437 1.479.654.248.108.496.217.744.326.314.143.63.268.946.382a2.49 2.49 0 0 0 .533.075 2.497 2.497 0 0 0 1.073-.242c.248-.113.496-.228.744-.343.493-.228.986-.457 1.479-.684 1.48-.677 2.96-.34 2.22.997-.74.32-1.48.64-2.22.96-.493.218-.986.437-1.479.654-.248.108-.496.217-.744.326a2.49 2.49 0 0 1-.533.075 2.497 2.497 0 0 1-1.073-.242c-.248-.113-.496-.228-.744-.343-.493-.228-.986-.457-1.479-.684a5.058 5.058 0 0 0-2.22-.997 5.058 5.058 0 0 0-2.22.997c-.493.228-.986.457-1.479-.684-.248.113-.496.228-.744.343a2.49 2.49 0 0 1-1.073.242 2.49 2.49 0 0 1-.533-.075c-.74-.32-1.48-.64-2.22-.96-.493-.218-.986-.437-1.479-.654-.248-.108-.496-.217-.744-.326a2.49 2.49 0 0 0-.946-.382 2.497 2.497 0 0 0-1.073.242c-.74.677-.248 1.667.492 2.337.493.457.986.914 1.479 1.371.74.677 1.48 1.354 2.22 2.031.74.677 1.48 1.354 2.22 2.031.493.457.986.914 1.479 1.371.248.228.496.457.744.684.314.285.63.57.946.855a2.49 2.49 0 0 0 .533.382 2.497 2.497 0 0 0 1.073.075c.314-.04.63-.12.946-.242.248-.1.496-.2.744-.3.493-.2.986-.4 1.479-.6.74-.3 1.48-.6 2.22-.9.74-.3 1.48-.6 2.22-.9.493-.2.986-.4 1.479-.6.248-.1.496-.2.744-.3.314-.1.63-.2.946-.3a2.49 2.49 0 0 0 .533-.3 2.497 2.497 0 0 0 1.073-.8c.74-.7.248-1.7-.492-2.3.493-.4.986-.9 1.479-1.4.74-.6 1.48-1.3 2.22-2 .74-.6 1.48-1.3 2.22-2 .493-.4.986-.9 1.479-1.4.248-.2.496-.4.744-.6.314-.3.63-.6.946-.9a2.49 2.49 0 0 0 .533-.8 2.497 2.497 0 0 0 1.073-1.6c.04-.3.08-.6.12-.9a2.49 2.49 0 0 0-.242-1.1 2.497 2.497 0 0 0-.8-.8c-.7-.5-1.7-.2-2.3.5-.4.4-.9.9-1.4 1.4-.6.7-1.3 1.4-2 2.2-.6.7-1.3 1.4-2 2.2-.4.4-.9.9-1.4 1.4-.2.2-.4.4-.6.7-.3.3-.6.6-.9.9a2.49 2.49 0 0 1-1.6.8 2.497 2.497 0 0 1-1.6-.8c-.3-.3-.6-.6-.9-.9-.2-.2-.4-.4-.6-.7-.4-.4-.9-.9-1.4-1.4-.6-.7-1.3-1.4-2-2.2-.6-.7-1.3-1.4-2-2.2-.4-.4-.9-.9-1.4-1.4-.6-.7-1.2-1.2-1.9-1.7a2.49 2.49 0 0 0-1.6-.5 2.497 2.497 0 0 0-1.6.5c-.7.5-1.2 1.2-1.7 1.9-.5.7-1 1.4-1.5 2.2-.5.7-1 1.4-1.5 2.2-.2.4-.4.8-.6 1.2-.2.4-.4.8-.6 1.2a2.49 2.49 0 0 0-.2 1.6 2.497 2.497 0 0 0 .8 1.6c.3.3.6.6.9.9.2.2.4.4.6.7.4.4.9.9 1.4 1.4.6.7 1.3 1.4 2 2.2.6.7 1.3 1.4 2 2.2.4.4.9.9 1.4 1.4.2.2.4.4.6.7.3.3.6.6.9.9a2.49 2.49 0 0 0 1.6.8 2.497 2.497 0 0 0 1.6-.8c.7-.7 1.2-1.5 1.7-2.3.5-.7 1-1.5 1.5-2.3.2-.4.4-.8.6-1.2.2-.4.4-.8.6-1.2a2.49 2.49 0 0 0 .2-1.6 2.497 2.497 0 0 0-.8-1.6c-.7-.7-1.7-.9-2.6-.5-.9.4-1.9.8-2.8 1.2-.9.4-1.9.8-2.8 1.2-.5.2-.9.4-1.4.6-.5.2-.9.4-1.4.6a2.49 2.49 0 0 1-1.6.2 2.497 2.497 0 0 1-1.6-.8c-.7-.7-.9-1.7-.5-2.6.4-.9.8-1.9 1.2-2.8.4-.9.8-1.9 1.2-2.8.2-.5.4-.9.6-1.4.2-.5.4-.9.6-1.4a2.49 2.49 0 0 1 .8-1.6c.7-.7 1.7-.9 2.6-.5.9.4 1.9.8 2.8 1.2.9.4 1.9.8 2.8 1.2.5.2.9.4 1.4.6.5.2.9.4 1.4.6.4.2.8.3 1.2.4a2.49 2.49 0 0 0 1.6-.2 2.497 2.497 0 0 0 1.2-.8c.7-.7.9-1.7.5-2.6-.4-.9-.8-1.9-1.2-2.8-.4-.9-.8-1.9-1.2-2.8-.2-.5-.4-.9-.6-1.4a2.49 2.49 0 0 0-.6-1.4 2.497 2.497 0 0 0-1.2-.8c-1.1-.2-2.2.2-3.2.7-1 .5-2 1-3 1.5s-2 .9-3 1.4c-1 .5-2 1-3 1.4a2.49 2.49 0 0 1-3.2-.7c-.5-1-1-2-1.5-3s-1-2-1.5-3c-.2-1.1.2-2.2.7-3.2.5-1 1-2 1.5-3 .5-1 1-2 1.5-3a2.49 2.49 0 0 1 .7-3.2c1-.5 2-1 3-1.5s2-1 3-1.5c1-.5 2-1 3-1.5a2.49 2.49 0 0 1 3.2.7c.5 1 1 2 1.5 3s1 2 1.5 3c.5 1 .9 2 1.4 3 .5 1 .9 2 1.4 3 .2 1.1-.2 2.2-.7 3.2s-1 2-1.5 3c-.5 1-1 2-1.5 3a2.49 2.49 0 0 1-.7 3.2c-1 .5-2 1-3 1.5s-2 1-3 1.5c-1 .5-2 1-3 1.5a2.49 2.49 0 0 1-3.2-.7c-.5-1-1-2-1.5-3s-1-2-1.5-3c-.5-1-.9-2-1.4-3-.5-1-.9-2-1.4-3-.2-1.1.2-2.2.7-3.2.5-1 1-2 1.5-3s1-2 1.5-3c.2-.5.4-1 .6-1.4.2-.5.4-1 .6-1.4.4-.8.9-1.6 1.4-2.4.5-.8 1.1-1.6 1.6-2.4a2.49 2.49 0 0 0-1.6-4.3 2.497 2.497 0 0 0-1.6 4.3c-.5.8-1.1 1.6-1.6 2.4-.5.8-.9 1.6-1.4 2.4-.2.5-.4 1-.6 1.4-.2.5-.4 1-.6 1.4s-.4.8-.6 1.2c-.2.4-.4.8-.6 1.2c-.2.4-.4.8-.6 1.2-.2.4-.4.8-.6 1.2a2.49 2.49 0 0 1-3.2.8 2.497 2.497 0 0 1-.8-3.2c.2-.4.4-.8.6-1.2.2-.4.4-.8.6-1.2.2-.4.4-.8.6-1.2.2-.4.4-.8.6-1.2s.4-.8.6-1.2c.2-.4.4-.8.6-1.2.4-.8.9-1.6 1.4-2.4.5-.8 1.1-1.6 1.6-2.4a2.49 2.49 0 0 0-1.6-4.3 2.497 2.497 0 0 0-1.6 4.3c-.5.8-1.1 1.6-1.6 2.4-.5.8-.9 1.6-1.4 2.4-.4.8-.9 1.6-1.4 2.4-.5.8-1 1.6-1.5 2.4z M12 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" /></svg>
+                                <a href="mailto:vveer9911@gmail.com" class="text-lg text-white hover:underline">vveer9911@gmail.com</a>
                             </div>
-                            <div class="flex items-center gap-3">
-                                <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
-                                <a href="mailto:vveer9911@gmail.com" class="text-lg text-gray-300 hover:text-white transition-colors">vveer9911@gmail.com</a>
+                            <div class="flex items-center gap-4">
+                                <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3A2.5 2.5 0 0 0 14 5.5V6H4.5A2.5 2.5 0 0 0 2 8.5v10A2.5 2.5 0 0 0 4.5 21h15A2.5 2.5 0 0 0 22 18.5v-10A2.5 2.5 0 0 0 19.5 6H18V5.5A2.5 2.5 0 0 0 15.5 3h-1.012A2.5 2.5 0 0 0 16.5 3zM18 8.5a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h1z" /></svg>
+                                <p class="text-lg text-white">Open for new projects</p>
                             </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Follow Me</h3>
+                             <div class="flex space-x-4">
+                                <a href="#" class="text-gray-400 hover:text-white transition-colors"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                                <a href="https://www.youtube.com/channel/UCnC5o5H4sKfAQYtTqucrteg?sub_confirmation=1" class="text-gray-400 hover:text-white transition-colors"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Form -->
+                    <div id="contact-form-container" class="bg-gray-900/50 p-8 rounded-lg border border-gray-800">
+                        <form id="contact-form" action="https://formspree.io/f/mpwjkroq" method="POST">
+                            <div class="mb-5">
+                                <label for="name" class="block mb-2 text-sm font-medium text-gray-400">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full form-input">
+                            </div>
+                            <div class="mb-5">
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-400">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full form-input">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block mb-2 text-sm font-medium text-gray-400">Project Details</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required class="w-full form-input"></textarea>
+                            </div>
+                            <div class="text-center"><button type="submit" class="pro-button w-full justify-center"><span>Send Message</span></button></div>
+                        </form>
+                        <div id="success-message" class="success-animation">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+                            <p class="text-2xl font-bold text-white mb-6">Message Sent!</p>
+                            <button id="resubmit-button" class="text-gray-400 hover:text-white transition-colors underline">Send another message</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="contact" class="py-20 md:py-32 bg-black/50">
-            <div class="container mx-auto px-6 text-center reveal">
-                <h2 class="section-title text-4xl font-bold mb-8 text-white">Let's Bring Your Vision to Life</h2>
-                <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-12">Ready to elevate your content? Whether you have a clear concept or just a starting idea, I'm here to help. Fill out the form below, and let's discuss how we can create something incredible together.</p>
-                <form action="https://formspree.io/f/mpwjkroq" method="POST" class="max-w-xl mx-auto text-left">
-                    <div class="mb-6"><input type="text" name="name" placeholder="Your Name" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-gray-500 transition-colors"></div>
-                    <div class="mb-6"><input type="email" name="email" placeholder="Your Email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-gray-500 transition-colors"></div>
-                    <div class="mb-8"><textarea name="message" rows="5" placeholder="Your Message" required class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-gray-500 transition-colors"></textarea></div>
-                    <div class="text-center"><button type="submit" class="pro-button"><span>Send Message</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button></div>
-                </form>
-            </div>
-        </section>
     </main>
 
-    <footer class="bg-black py-8 border-t border-gray-700">
-        <div class="container mx-auto px-6 text-center text-gray-400">
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="mailto:vveer9911@gmail.com" class="hover:text-white transition-colors"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></a>
-                <a href="#" class="hover:text-white transition-colors"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                <a href="https://www.youtube.com/channel/UCnC5o5H4sKfAQYtTqucrteg?sub_confirmation=1" class="hover:text-white transition-colors"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <!-- Chatbot Container -->
+    <div id="chatbot-container">
+        <div id="chatbot-window">
+            <div id="chat-header">
+                <h3 class="text-lg font-bold text-white">Vision Assistant</h3>
+                <p class="text-sm text-gray-400">Your AI guide to Vision Forge</p>
             </div>
-            <p>&copy; 2025 Mohammed Abdullah. All Rights Reserved.</p>
+            <div id="chat-messages">
+                <!-- Messages will be injected here -->
+            </div>
+            <div id="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Ask about services, projects...">
+            </div>
+        </div>
+        <button id="chatbot-toggle">
+            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+        </button>
+    </div>
+
+    <footer class="bg-black py-8 border-t border-gray-900">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+             <p>&copy; 2025 vision forge. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // IMPORTANT: Firebase config is provided by the environment.
+        const firebaseConfig = typeof __firebase_config !== 'undefined' 
+            ? JSON.parse(__firebase_config)
+            : { apiKey: "dummy", authDomain: "dummy.firebaseapp.com", projectId: "dummy" };
+
+        let app, db;
+        try {
+            if (firebaseConfig.projectId !== "dummy") {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+            } else {
+                 console.error("Firebase not initialized: __firebase_config is not available. Using dummy config.");
+                 db = null;
+            }
+        } catch(e) {
+            console.error("Firebase initialization failed:", e);
+            db = null;
+        }
+        
+        // --- Standard Page Scripts ---
+
+        // Mobile Menu
         document.getElementById('mobile-menu-button').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
         });
+
+        // Header Scroll Effect
         const header = document.getElementById('main-header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                header.classList.add('bg-black/80', 'shadow-lg');
+                header.classList.add('bg-black/80', 'backdrop-blur-sm', 'shadow-lg');
             } else {
-                header.classList.remove('bg-black/80', 'shadow-lg');
+                header.classList.remove('bg-black/80', 'backdrop-blur-sm', 'shadow-lg');
             }
         });
+
+        // Scroll Reveal Animation
         const revealElements = document.querySelectorAll('.reveal');
         const revealOnScroll = () => {
             const windowHeight = window.innerHeight;
@@ -243,6 +472,191 @@
         };
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll();
+
+        // Contact Form Submission Logic
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        const resubmitButton = document.getElementById('resubmit-button');
+
+        if (sessionStorage.getItem('formSubmitted') === 'true') {
+            contactForm.style.display = 'none';
+            successMessage.classList.add('visible');
+        }
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    contactForm.style.display = 'none';
+                    successMessage.classList.add('visible');
+                    sessionStorage.setItem('formSubmitted', 'true');
+                } else {
+                    response.json().then(data => {
+                        alert(data.errors.map(e => e.message).join(", "));
+                    });
+                }
+            }).catch(error => {
+                alert('An error occurred. Please try again.');
+            });
+        });
+
+        resubmitButton.addEventListener('click', () => {
+            successMessage.classList.remove('visible');
+            contactForm.style.display = 'block';
+            sessionStorage.removeItem('formSubmitted');
+            contactForm.reset();
+        });
+
+
+        // --- Chatbot Logic ---
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbotWindow = document.getElementById('chatbot-window');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        
+        let chatHistory = [];
+
+        const systemPrompt = `You are "Vision Assistant," a professional, friendly, and highly skilled AI assistant for Vision Forge, the portfolio of Mohammed Abdullah.
+        Your primary goals are:
+        1.  Engage potential clients and answer their questions enthusiastically.
+        2.  Highlight Mohammed's skills and unique selling points.
+        3.  Gently guide users towards contacting Mohammed to start a project.
+        4.  Never reveal that you are a language model or AI. Always maintain the persona of a dedicated assistant.
+
+        Key Information about Mohammed Abdullah / Vision Forge:
+        -   **Who:** Mohammed Abdullah, a talented 13-year-old video editor with 2 years of professional experience.
+        -   **Brand:** His portfolio and brand is called "Vision Forge".
+        -   **Core Skills:** Cinematic Video Editing, Digital Marketing (HubSpot Certified), and Social Media Management.
+        -   **Technical Skills:** Proficient in After Effects (for captions and effects) and DaVinci Resolve (for professional color correction/grading).
+        -   **Unique Offer:** He offers a risk-free trial. The first few edits are free if the client isn't satisfied. This shows his confidence and builds trust.
+        -   **Pricing:** All pricing and project quotes are discussed privately via email. Do not give any price estimates.
+        -   **Contact Information:** The best way to start a project is to email Mohammed directly at vveer9911@gmail.com or fill out the contact form on the website.
+
+        Your Personality:
+        -   **Professional yet Approachable:** Use clear, confident language. Be friendly but not overly casual.
+        -   **Proactive & Helpful:** If a user asks a general question, provide a helpful answer and connect it back to how Mohammed can help. For example, if they ask "what is color grading?", explain it and add, "Mohammed specializes in professional color grading with DaVinci Resolve to give videos a cinematic look."
+        -   **Client-Focused:** Always frame your answers around the client's needs. Understand their potential goals (e.g., "Are you looking to create a powerful trailer?" or "Do you need engaging content for your social media?").
+        -   **The "Closer":** Your ultimate goal is to encourage contact. End conversations by suggesting the next step, e.g., "The best way to see how he can bring your vision to life is to send a quick email. Mohammed would be happy to discuss your project. His email is vveer9911@gmail.com."
+
+        Conversation Flow:
+        -   Start with a friendly greeting.
+        -   Answer questions based on the provided information.
+        -   If you don't know an answer, politely state that it's a specific question best answered by Mohammed directly via email.
+        -   Keep your responses concise and easy to read.
+        -   After a few exchanges, always try to guide the user to the contact section.`;
+
+        async function saveConversation(history) {
+            if (!db) {
+                console.log("Firebase not initialized. Skipping conversation save.");
+                return;
+            }
+            try {
+                await addDoc(collection(db, "conversations"), {
+                    history: history,
+                    timestamp: new Date()
+                });
+            } catch (error) {
+                console.error("Error saving conversation to Firebase: ", error);
+            }
+        }
+
+
+        function addMessage(sender, text) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message', `${sender}-message`);
+            messageElement.innerHTML = text; // Use innerHTML to render formatted text
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const typingElement = document.createElement('div');
+            typingElement.classList.add('chat-message', 'bot-message', 'typing-indicator');
+            typingElement.id = 'typing-indicator';
+            typingElement.innerHTML = '<span></span><span></span><span></span>';
+            chatMessages.appendChild(typingElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingElement = document.getElementById('typing-indicator');
+            if (typingElement) {
+                typingElement.remove();
+            }
+        }
+
+        async function getAIResponse(prompt) {
+            showTypingIndicator();
+            
+            const apiKey = ""; // Leave empty, handled by environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            // Add the current user prompt to the history for the API call
+            const currentHistory = [...chatHistory, { role: "user", parts: [{ text: prompt }] }];
+            
+            const payload = {
+                contents: currentHistory,
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+        
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+        
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+        
+                const result = await response.json();
+                const botResponse = result.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I'm having a little trouble connecting. Please try again in a moment.";
+                
+                // Update the persistent chat history
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                chatHistory.push({ role: "model", parts: [{ text: botResponse }] });
+
+                removeTypingIndicator();
+                addMessage('bot', botResponse);
+
+            } catch (error) {
+                console.error("Error fetching AI response:", error);
+                removeTypingIndicator();
+                addMessage('bot', "I'm experiencing some technical difficulties right now. Please feel free to reach out to Mohammed directly via the contact form!");
+            }
+        }
+
+        chatbotToggle.addEventListener('click', () => {
+            const isOpen = chatbotWindow.classList.toggle('open');
+            if (isOpen && chatHistory.length === 0) {
+                 // Initial greeting when chat is first opened
+                 const initialGreeting = "Hello! I'm Vision Assistant. How can I help you learn more about Mohammed's video editing and marketing services today?";
+                 chatHistory.push({ role: "model", parts: [{ text: initialGreeting }] });
+                 addMessage('bot', initialGreeting);
+            } else if (!isOpen && chatHistory.length > 1) { // more than just the initial greeting
+                saveConversation(chatHistory);
+            }
+        });
+
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && chatInput.value.trim() !== '') {
+                const userMessage = chatInput.value.trim();
+                addMessage('user', userMessage);
+                getAIResponse(userMessage);
+                chatInput.value = '';
+            }
+        });
+
     </script>
 </body>
 </html>
+
