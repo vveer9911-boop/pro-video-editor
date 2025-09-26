@@ -9,7 +9,7 @@
     <meta name="description" content="Portfolio of Mohammed Abdullah, a professional Video Editor, Digital Marketer, and Social Media Manager specializing in cinematic storytelling.">
     <meta property="og:title" content="Mohammed Abdullah - Vision Forge | Pro Video Editor">
     <meta property="og:description" content="Explore the creative video projects and marketing skills of Mohammed Abdullah.">
-    <meta property="og:image" content="https://i.postimg.cc/SN6fyzSd/download-2.jpg">
+    <meta property="og:image" content="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg">
     <meta property="og:url" content="https://example.com"> <!-- Replace with your actual domain -->
     <meta name="twitter:card" content="summary_large_image">
 
@@ -17,35 +17,44 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='black'/><text x='50%' y='52%' dominant-baseline='middle' text-anchor='middle' font-family='Playfair Display' font-size='50' font-weight='900' fill='white'>VF</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #ffffff;
-            --secondary-color: #9ca3af;
-            --background-color: #0a0a0a;
+            --secondary-color: #a0aec0; /* Lighter gray for better readability */
+            --background-color: #050505; /* Deeper black */
             --surface-color: #111111;
-            --border-color: #222222;
+            --border-color: #2d3748;
         }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif; /* New professional font */
             background-color: var(--background-color);
             color: var(--secondary-color);
         }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #000; }
         ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #333; }
+        ::-webkit-scrollbar-thumb:hover { background: #4a5568; }
 
-        .hero-section {
+        .hero-section { 
+            position: relative; 
+            overflow: hidden;
             background-size: cover;
             background-position: center;
         }
         .hero-text { font-family: 'Playfair Display', serif; letter-spacing: 0.08em; }
-        .subtitle-transparent { color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); }
+        .subtitle-transparent { color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8); }
         
         .section-title { font-family: 'Playfair Display', serif; }
+        
+        /* Subtle background textures for sections */
+        .textured-section {
+            background-color: #000000;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23111111' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+        }
 
         .service-card {
             background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 2.5rem; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden;
@@ -53,9 +62,8 @@
         .service-card:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.2); }
         .service-card .service-icon { margin: 0 auto 1.5rem; }
         
-        /* Reverted Project Card styles */
         .project-card {
-            background-color: #1a202c; /* A dark blue-gray */
+            background-color: #1a202c;
             border-radius: 0.75rem;
             overflow: hidden;
             border: 1px solid #2d3748;
@@ -67,7 +75,7 @@
         }
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             background-color: #000;
@@ -89,7 +97,6 @@
         }
         .pro-button:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
         
-        /* Updated Form Styles */
         .form-input {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
@@ -112,148 +119,6 @@
         @keyframes stroke { 100% { stroke-dashoffset: 0; } }
         @keyframes scale { 0%, 100% { transform: none; } 50% { transform: scale3d(1.1, 1.1, 1); } }
         @keyframes fill { 100% { box-shadow: inset 0px 0px 0px 50px #4BB543; } }
-
-        /* --- Professional Chatbot Styles --- */
-        #chatbot-container { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; }
-
-        #chatbot-toggle {
-            background: linear-gradient(45deg, #333 0%, #111 100%);
-            color: white;
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid #444;
-        }
-        #chatbot-toggle:hover { transform: scale(1.1) rotate(15deg); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        #chatbot-toggle svg { transition: transform 0.3s ease, opacity 0.3s ease; position: absolute; }
-        #chatbot-toggle #chat-open-icon { opacity: 1; transform: scale(1); }
-        #chatbot-toggle #chat-close-icon { opacity: 0; transform: scale(0.7); }
-        #chatbot-toggle.open #chat-open-icon { opacity: 0; transform: scale(0.7); }
-        #chatbot-toggle.open #chat-close-icon { opacity: 1; transform: scale(1); }
-
-        #chatbot-window {
-            position: absolute;
-            bottom: 90px;
-            right: 0;
-            width: 380px;
-            height: 550px;
-            background-color: #000;
-            border: 1px solid var(--border-color);
-            border-radius: 1.5rem;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transform-origin: bottom right;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
-            transform: scale(0.9);
-            opacity: 0;
-            pointer-events: none;
-        }
-        #chatbot-window.open { transform: scale(1); opacity: 1; pointer-events: auto; }
-        
-        #chat-header {
-            padding: 1.25rem;
-            background: linear-gradient(45deg, #111 0%, #222 100%);
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        #chat-header::before {
-            content: '';
-            width: 10px;
-            height: 10px;
-            background-color: #2ecc71;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #2ecc71;
-        }
-        
-        #chat-messages {
-            flex-grow: 1;
-            padding: 1.5rem;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .chat-message {
-            padding: 0.75rem 1.25rem;
-            border-radius: 1.25rem;
-            max-width: 85%;
-            line-height: 1.6;
-            animation: slideIn 0.4s ease forwards;
-        }
-        @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .user-message {
-            background: linear-gradient(45deg, #f0f0f0 0%, #ffffff 100%);
-            color: black;
-            align-self: flex-end;
-            border-bottom-right-radius: 0.25rem;
-        }
-        .bot-message {
-            background-color: #1a1a1a;
-            color: white;
-            align-self: flex-start;
-            border: 1px solid #333;
-            border-bottom-left-radius: 0.25rem;
-        }
-        .typing-indicator {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-        .typing-indicator span {
-            width: 8px;
-            height: 8px;
-            background-color: #666;
-            border-radius: 50%;
-            animation: bounce 1.4s infinite ease-in-out both;
-        }
-        .typing-indicator span:nth-child(2) { animation-delay: 0.16s; }
-        .typing-indicator span:nth-child(3) { animation-delay: 0.32s; }
-        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-        
-        #chat-input-container {
-            padding: 1rem;
-            border-top: 1px solid var(--border-color);
-            background-color: #000;
-            display: flex;
-            gap: 0.5rem;
-        }
-        #chat-input {
-            width: 100%;
-            background-color: #222;
-            border: 1px solid #444;
-            border-radius: 2rem;
-            padding: 0.75rem 1.25rem;
-            color: white;
-            outline: none;
-            transition: all 0.2s ease;
-        }
-        #chat-input:focus { border-color: white; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2); }
-        #chat-send-btn {
-            background-color: white;
-            color: black;
-            border: none;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        #chat-send-btn:hover { transform: scale(1.1); }
     </style>
 </head>
 <body class="text-gray-200">
@@ -286,11 +151,11 @@
     </header>
 
     <main>
-        <section id="home" class="hero-section h-screen flex items-center justify-center relative overflow-hidden" style="background-image: url('https://i.postimg.cc/SN6fyzSd/download-2.jpg');">
-            <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <section id="home" class="hero-section h-screen flex items-center justify-center" style="background-image: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="absolute inset-0 bg-black/70 z-10"></div>
             <div class="text-center z-20 p-4 reveal visible">
                 <h1 class="hero-text text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase">Mohammed Abdullah</h1>
-                <p class="subtitle-transparent text-xl md:text-2xl lg:text-3xl mt-4 tracking-wide">Cinematic Video Editor & Digital Marketer</p>
+                <p class="subtitle-transparent text-2xl md:text-3xl lg:text-4xl mt-6 tracking-widest uppercase">Cinematic Video Editor</p>
                 <a href="#projects" class="pro-button mt-12">
                     <span>Explore My Work</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
@@ -298,7 +163,7 @@
             </div>
         </section>
 
-        <section id="services" class="py-20 md:py-32">
+        <section id="services" class="py-20 md:py-32 textured-section">
             <div class="container mx-auto px-6 text-center">
                 <div class="reveal">
                     <h2 class="section-title text-4xl font-bold mb-4 text-white">My Services</h2>
@@ -323,20 +188,27 @@
                 </div>
             </div>
         </section>
-     <section id="projects" class="py-20 md:py-32">
+
+        <section id="projects" class="py-20 md:py-32 textured-section">
             <div class="container mx-auto px-6 text-center">
                 <div class="reveal">
                     <h2 class="section-title text-4xl font-bold mb-4 text-white">Selected Work</h2>
                     <p class="text-lg max-w-2xl mx-auto mb-16">A collection of projects that showcase my passion for storytelling.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                     <div class="project-card reveal">
+                        <div class="video-container"><iframe src="https://drive.google.com/file/d/1m2yuZ_P3k5L2lMyRbZlngKJukEzAehhg/preview" allow="autoplay"></iframe></div>
+                        <div class="p-6"><h3 class="text-2xl font-bold mb-2 text-white">Puss in Boots - Death's Wish</h3><p class="text-gray-400">This intense character-driven edit focuses on the menacing presence of Death. Through meticulous pacing and synchronized sound design, the piece builds a palpable sense of dread and cinematic tension.</p></div>
+                    </div>
+                    <div class="project-card reveal" style="transition-delay: 200ms;">
                         <div class="video-container"><iframe src="https://drive.google.com/file/d/19fBToyqJVvzQSldIS4GdPsaW3nSEdHor/preview" allow="autoplay"></iframe></div>
                         <div class="p-6"><h3 class="text-2xl font-bold mb-2 text-white">"Leave The Kid Alone": Avengers Doomsday</h3><p class="text-gray-400">This trailer transforms existing footage with dynamic AE captions and effects. The cinematic look is achieved through professional color correction in DaVinci Resolve to build tension.</p></div>
-                    <div class="video-container"><iframe src="https://drive.google.com/file/d/1m2yuZ_P3k5L2lMyRbZlngKJukEzAehhg/preview" allow="autoplay"></iframe></div>
-                        <div class="p-6"><h3 class="text-2xl font-bold mb-2 text-white">Puss in Boots - Death's Wish</h3><p class="text-gray-400">This intense character-driven edit focuses on the menacing presence of Death. Through meticulous pacing and synchronized sound design, the piece builds a palpable sense of dread and cinematic tension.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="about" class="py-20 md:py-32">
+        <section id="about" class="py-20 md:py-32 textured-section">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 reveal">
                 <div class="w-full md:w-1/3">
                     <div class="w-48 h-48 md:w-64 md:h-64 mx-auto bg-black rounded-full flex items-center justify-center shadow-2xl border-4 border-gray-800 transform hover:scale-105 transition-transform duration-300">
@@ -354,7 +226,7 @@
             </div>
         </section>
 
-        <section id="contact" class="py-20 md:py-32">
+        <section id="contact" class="py-20 md:py-32 textured-section">
             <div class="container mx-auto px-6 reveal">
                 <div class="text-center">
                     <h2 class="section-title text-4xl font-bold mb-4 text-white">Let's Create Together</h2>
@@ -380,7 +252,7 @@
                             <h3 class="text-2xl font-bold text-white mb-4">Follow Me</h3>
                              <div class="flex space-x-4">
                                 <a href="#" class="text-gray-400 hover:text-white transition-colors"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                                <a href="https://www.youtube.com/channel/UCnC5o5H4sKfAQYtTqucrteg?sub_confirmation=1" class="text-gray-400 hover:text-white transition-colors"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                                <a href="https://www.youtube.com/channel/UCnC5o5H4sKfAQYtTqucrteg?sub_confirmation=1" class="text-gray-400 hover:text-white transition-colors"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.22 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                              </div>
                         </div>
                     </div>
@@ -413,29 +285,6 @@
         </section>
     </main>
 
-    <!-- Chatbot Container -->
-    <div id="chatbot-container">
-        <div id="chatbot-window">
-            <div id="chat-header">
-                <h3 class="text-lg font-bold text-white">Vision Assistant</h3>
-                <p class="text-sm text-gray-400">Online</p>
-            </div>
-            <div id="chat-messages">
-                <!-- Messages will be injected here -->
-            </div>
-            <div id="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Ask a question...">
-                <button id="chat-send-btn">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.478 2.405a.75.75 0 0 0-.926.94l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.405Z" /></svg>
-                </button>
-            </div>
-        </div>
-        <button id="chatbot-toggle">
-            <svg id="chat-open-icon" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
-            <svg id="chat-close-icon" class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" ><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
-        </button>
-    </div>
-
     <footer class="bg-black py-8 border-t border-gray-900">
         <div class="container mx-auto px-6 text-center text-gray-400">
              <p>&copy; 2025 vision forge. All Rights Reserved.</p>
@@ -461,19 +310,23 @@
             }
         });
 
-        // Scroll Reveal Animation
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            revealElements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    el.classList.add('visible');
+        // Updated Scroll Reveal for Backgrounds and Content
+        const revealSections = document.querySelectorAll('.background-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bg = entry.target.querySelector('.section-bg');
+                    const contentElements = entry.target.querySelectorAll('.content-reveal');
+                    if (bg) bg.classList.add('visible');
+                    contentElements.forEach(el => el.classList.add('visible'));
                 }
             });
-        };
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll();
+        }, { threshold: 0.25 }); // Trigger when 25% of the section is visible
+
+        revealSections.forEach(section => {
+            observer.observe(section);
+        });
+
 
         // Contact Form Submission Logic
         const contactForm = document.getElementById('contact-form');
@@ -514,144 +367,6 @@
             sessionStorage.removeItem('formSubmitted');
             contactForm.reset();
         });
-
-
-        // --- Chatbot Logic ---
-        const chatbotToggle = document.getElementById('chatbot-toggle');
-        const chatbotWindow = document.getElementById('chatbot-window');
-        const chatMessages = document.getElementById('chat-messages');
-        const chatInput = document.getElementById('chat-input');
-        const sendButton = document.getElementById('chat-send-btn');
-        
-        let chatHistory = [];
-
-        const systemPrompt = `You are "Vision Assistant," a professional, friendly, and highly skilled AI assistant for Vision Forge, the portfolio of Mohammed Abdullah.
-        Your primary goals are:
-        1.  Engage potential clients and answer their questions enthusiastically.
-        2.  Highlight Mohammed's skills and unique selling points.
-        3.  Gently guide users towards contacting Mohammed to start a project.
-        4.  Never reveal that you are a language model or AI. Always maintain the persona of a dedicated assistant.
-
-        Key Information about Mohammed Abdullah / Vision Forge:
-        -   **Who:** Mohammed Abdullah, a talented 13-year-old video editor with 2 years of professional experience.
-        -   **Brand:** His portfolio and brand is called "Vision Forge".
-        -   **Core Skills:** Cinematic Video Editing, Digital Marketing (HubSpot Certified), and Social Media Management.
-        -   **Technical Skills:** Proficient in After Effects (for captions and effects) and DaVinci Resolve (for professional color correction/grading).
-        -   **Unique Offer:** He offers a risk-free trial. The first few edits are free if the client isn't satisfied. This shows his confidence and builds trust.
-        -   **Pricing:** All pricing and project quotes are discussed privately via email. Do not give any price estimates.
-        -   **Contact Information:** The best way to start a project is to email Mohammed directly at vveer9911@gmail.com or fill out the contact form on the website.
-
-        Your Personality:
-        -   **Professional yet Approachable:** Use clear, confident language. Be friendly but not overly casual.
-        -   **Proactive & Helpful:** If a user asks a general question, provide a helpful answer and connect it back to how Mohammed can help. For example, if they ask "what is color grading?", explain it and add, "Mohammed specializes in professional color grading with DaVinci Resolve to give videos a cinematic look."
-        -   **Client-Focused:** Always frame your answers around the client's needs. Understand their potential goals (e.g., "Are you looking to create a powerful trailer?" or "Do you need engaging content for your social media?").
-        -   **The "Closer":** Your ultimate goal is to encourage contact. End conversations by suggesting the next step, e.g., "The best way to see how he can bring your vision to life is to send a quick email. Mohammed would be happy to discuss your project. His email is vveer9911@gmail.com."
-
-        Conversation Flow:
-        -   Start with a friendly greeting.
-        -   Answer questions based on the provided information.
-        -   If you don't know an answer, politely state that it's a specific question best answered by Mohammed directly via email.
-        -   Keep your responses concise and easy to read.
-        -   After a few exchanges, always try to guide the user to the contact section.`;
-
-        function addMessage(sender, text) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('chat-message', `${sender}-message`);
-            messageElement.innerHTML = text.replace(/\n/g, '<br>'); // Replace newlines with <br> for HTML rendering
-            chatMessages.appendChild(messageElement);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function showTypingIndicator() {
-            const typingElement = document.createElement('div');
-            typingElement.classList.add('chat-message', 'bot-message', 'typing-indicator');
-            typingElement.id = 'typing-indicator';
-            typingElement.innerHTML = '<span></span><span></span><span></span>';
-            chatMessages.appendChild(typingElement);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function removeTypingIndicator() {
-            const typingElement = document.getElementById('typing-indicator');
-            if (typingElement) {
-                typingElement.remove();
-            }
-        }
-
-        async function getAIResponse(prompt, history) {
-            showTypingIndicator();
-            
-            const apiKey = ""; // Leave empty, handled by environment
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-            const payload = {
-                contents: history,
-                systemInstruction: {
-                    parts: [{ text: systemPrompt }]
-                },
-            };
-        
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-        
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
-        
-                const result = await response.json();
-                const botResponse = result.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I'm having a little trouble connecting. Please try again in a moment.";
-                
-                // Update the persistent chat history
-                history.push({ role: "model", parts: [{ text: botResponse }] });
-
-                removeTypingIndicator();
-                addMessage('bot', botResponse);
-
-            } catch (error) {
-                console.error("Error fetching AI response:", error);
-                removeTypingIndicator();
-                addMessage('bot', "I'm experiencing some technical difficulties right now. Please feel free to reach out to Mohammed directly via the contact form!");
-            }
-        }
-
-        chatbotToggle.addEventListener('click', () => {
-            chatbotWindow.classList.toggle('open');
-            chatbotToggle.classList.toggle('open');
-            if (chatbotWindow.classList.contains('open') && chatHistory.length === 0) {
-                 const initialGreeting = "Hello! I'm Vision Assistant. How can I help you learn more about Mohammed's video editing and marketing services today?";
-                 chatHistory.push({ role: "model", parts: [{ text: initialGreeting }] });
-                 addMessage('bot', initialGreeting);
-            }
-        });
-
-        function handleSendMessage() {
-            if (chatInput.value.trim() !== '') {
-                const userMessage = chatInput.value.trim();
-                addMessage('user', userMessage);
-                chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
-                
-                // --- RELIABILITY FIX ---
-                // To ensure stability and prevent memory issues, we only send the most recent
-                // part of the conversation to the AI, keeping the chatbot fast and reliable.
-                const recentHistory = chatHistory.slice(-10); // Use last 10 messages for context
-
-                getAIResponse(userMessage, recentHistory);
-                chatInput.value = '';
-            }
-        }
-
-        chatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                handleSendMessage();
-            }
-        });
-        
-        sendButton.addEventListener('click', handleSendMessage);
-
     </script>
 </body>
 </html>
